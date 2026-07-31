@@ -20,7 +20,7 @@ import static jakarta.persistence.FetchType.*;
 public class Order {
 
     @Id @GeneratedValue
-    @Column(name = " order_id")
+    @Column(name = "order_id")
     private Long id;
 
     @ManyToOne(fetch = LAZY)  // *** @XToOne 관계는 기본이 즉시로딩(EAGER)이므로 직접 지연로딩(LAZY)으로 설정 ***
