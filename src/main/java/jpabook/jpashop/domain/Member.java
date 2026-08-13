@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class Member {
     @Embedded   // 내장타입
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member") // 나는 order 테이블에 있는 member에 의해 매핑된 거울일 뿐이야.
     // 때문에 여기 값이 변경되어도 order 테이블의 member는 변경되지 않음
     private List<Order> orders = new ArrayList<>();
